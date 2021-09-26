@@ -1,6 +1,4 @@
-# reactjs-tutorial
-
-Tutorial ReactJS + React Hooks + Redux + Redux Saga
+# Tutorial ReactJS + React Hooks + Redux + Redux Saga
 
 ## Cài đặt dependencies cần thiết
 
