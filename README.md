@@ -1,8 +1,8 @@
-## reactjs-tutorial
+# reactjs-tutorial
 
 Tutorial ReactJS + React Hooks + Redux + Redux Saga
 
-# Cài đặt dependencies cần thiết
+## Cài đặt dependencies cần thiết
 
 ```
 mkdir reactjs-tutorial
@@ -11,7 +11,7 @@ npm init -y
 npm install --save react react-dom
 ```
 
-# Tạo thư mục public và tạo file gốc của project
+## Tạo thư mục public và tạo file gốc của project
 
 ```
 mkdir public
@@ -19,7 +19,7 @@ cd public
 touch index.html
 ```
 
-# Thêm vào đó những dòng code đầu tiên index.html
+## Thêm vào đó những dòng code đầu tiên index.html
 
 ```
 <!DOCTYPE html>
@@ -69,7 +69,7 @@ touch index.html
 
 ```
 
-# # Tạo thư mục src và tạo file App.js
+## Tạo thư mục src và tạo file App.js
 
 ```
 import React from 'react'
@@ -80,15 +80,15 @@ const App = () => <div>Hello World</div>
 ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
-# Cài đặt và config Webpack
+## Cài đặt và config Webpack
 
-1. Cài đặt webpack
+### 1. Cài đặt webpack
 
 ```
 npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin
 ```
 
-2. Tạo file thiết lập và cấu hình webpack.config.js
+### 2. Tạo file thiết lập và cấu hình webpack.config.js
 
 ```
 touch webpack.config.js
@@ -121,13 +121,13 @@ module.exports = {
 
 ```
 
-3. Cài đặt babel
+### 3. Cài đặt babel
 
 ```
 npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader
 ```
 
-4. Config babel trong file package.json
+### 4. Config babel trong file package.json
 
 ```
 {
@@ -142,7 +142,7 @@ npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-l
 }
 ```
 
-5. Thêm script start vào file package.json
+### 5. Thêm script start vào file package.json
 
 ```
 {
