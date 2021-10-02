@@ -181,24 +181,7 @@ npm install @babel/core @babel/preset-env @babel/preset-react babel-loader css-l
 }
 ```
 
-### 6. Cài đặt và cấu hình prettier
-
-```
-npm install --save-dev --save-exact prettier
-```
-
-Tạo file .prettierrc.json
-
-```
-{
-    "trailingComma": "none",
-    "tabWidth": 4,
-    "singleQuote": true,
-    "printWidth": 120
-}
-```
-
-### 7. Cài đặt và cấu hình prettier format code cho project
+## Cài đặt và cấu hình prettier
 
 ```
 npm install --save-dev --save-exact prettier
@@ -213,4 +196,18 @@ Tạo file .prettierrc.json ở thư mục gốc
     "singleQuote": true,
     "printWidth": 120
 }
+```
+
+## Chúng ta sẽ sử dụng Redux và Redux-Saga cho project
+
+### 8. Cài đặt Redux
+
+```
+npm install redux
+```
+
+### 9. Cài đặt Redux-Saga (giúp quản lý những side effect trong ứng dụng redux trở nên đơn giản hơn)
+
+```
+npm install redux-saga
 ```
