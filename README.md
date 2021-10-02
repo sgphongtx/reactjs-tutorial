@@ -75,15 +75,35 @@ touch index.html
 
 ```
 
-## Tạo thư mục src và tạo file App.js
+## Tạo thư mục src và tạo file index.js và App.js
+
+index.js
 
 ```
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 
-const App = () => <div>Hello World</div>
+import App from "./App";
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById("root"));
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+
+```
+
+App.js
+
+```
+import React from "react";
+
+const App = () => {
+  return <div>My App</div>;
+};
+
+export default App;
+
 ```
 
 ## Cài đặt và config Webpack
@@ -91,7 +111,7 @@ ReactDOM.render(<App />, document.getElementById('root'))
 ### 1. Cài đặt webpack
 
 ```
-npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin
+npm install webpack webpack-cli webpack-dev-server html-webpack-plugin --save-dev
 ```
 
 ### 2. Tạo file thiết lập và cấu hình webpack.config.js
@@ -105,7 +125,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  entry: "./src/App.js",
+  entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "./build"),
     filename: "bundle.js",
@@ -113,8 +133,15 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
-        use: "babel-loader",
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
       },
     ],
   },
@@ -130,31 +157,25 @@ module.exports = {
 ### 3. Cài đặt babel
 
 ```
-npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-loader
+npm install @babel/core @babel/preset-env @babel/preset-react babel-loader css-loader style-loader --save-dev
 ```
 
-### 4. Config babel trong file package.json
+### 4. Tạo file .babelrc trong thư mục gốc và Config babel
 
 ```
 {
-    ...
-    "babel": {
-        "presets": [
-            "@babel/preset-env",
-            "@babel/preset-react"
-        ]
-    }
-    ...
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
 }
 ```
 
-### 5. Thêm script start vào file package.json
+### 5. Biên dịch file sử dụng Webpack. Thêm script start vào file package.json
 
 ```
 {
   ...
     script: {
-        "start": "webpack"
+      "start": "webpack-dev-server --mode development --open --hot"
+      "build": "webpack --mode production"
     }
 ...
 }
