@@ -1,9 +1,9 @@
-import i18n from 'i18next';
+import i18next from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 import commonUs from './us/common';
 
-i18n.use(LanguageDetector).init({
+i18next.use(LanguageDetector).init({
     resources: {
         'en-US': {
             common: commonUs
@@ -25,4 +25,4 @@ i18n.use(LanguageDetector).init({
     }
 });
 
-export default i18n;
+export default i18next;

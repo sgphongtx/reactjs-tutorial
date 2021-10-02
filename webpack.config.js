@@ -6,7 +6,11 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, './build'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
+    },
+    devServer: {
+        historyApiFallback: true
     },
     module: {
         rules: [
@@ -28,5 +32,9 @@ module.exports = {
             template: './public/index.html'
         }),
         new BundleAnalyzerPlugin()
-    ]
+    ],
+    resolve: {
+        extensions: ['.json', '.js', '.jsx'],
+        modules: [path.resolve('./src'), path.resolve('./node_modules')]
+    }
 };

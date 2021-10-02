@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import store from './core/redux/store';
+import store from 'core/redux/store';
 import { I18nextProvider } from 'react-i18next';
-import i18next from './assets/i18next';
+import i18next from 'assets/i18next';
 
 import App from './App';
 
