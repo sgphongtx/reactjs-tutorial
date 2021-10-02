@@ -180,3 +180,20 @@ npm install @babel/core @babel/preset-env @babel/preset-react babel-loader css-l
 ...
 }
 ```
+
+### 6. Cài đặt và cấu hình prettier
+
+```
+npm install --save-dev --save-exact prettier
+```
+
+Tạo file .prettierrc.json
+
+```
+{
+    "trailingComma": "none",
+    "tabWidth": 4,
+    "singleQuote": true,
+    "printWidth": 120
+}
+```
