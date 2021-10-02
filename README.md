@@ -197,3 +197,20 @@ Tạo file .prettierrc.json
     "printWidth": 120
 }
 ```
+
+### 7. Cài đặt và cấu hình prettier format code cho project
+
+```
+npm install --save-dev --save-exact prettier
+```
+
+Tạo file .prettierrc.json ở thư mục gốc
+
+```
+{
+    "trailingComma": "none",
+    "tabWidth": 4,
+    "singleQuote": true,
+    "printWidth": 120
+}
+```
