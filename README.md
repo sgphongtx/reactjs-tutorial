@@ -217,3 +217,16 @@ npm install redux-saga
 ```
 npm install react-i18next i18next i18next-browser-languagedetector --save
 ```
+
+## Cài đặt Analyzing the Bundle Size
+
+```
+npm i webpack-bundle-analyzer
+```
+
+## Cài đặt material-ui
+
+```
+npm install @mui/material @emotion/react @emotion/styled
+npm install @mui/icons-material
+```
