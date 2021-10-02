@@ -203,11 +203,17 @@ Tạo file .prettierrc.json ở thư mục gốc
 ### 8. Cài đặt Redux
 
 ```
-npm install redux
+npm install react-redux redux
 ```
 
 ### 9. Cài đặt Redux-Saga (giúp quản lý những side effect trong ứng dụng redux trở nên đơn giản hơn)
 
 ```
 npm install redux-saga
+```
+
+## Cài đặt i18next và i18next language detection plugin cho đa ngôn ngữ
+
+```
+npm install react-i18next i18next i18next-browser-languagedetector --save
 ```
