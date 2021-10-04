@@ -39,7 +39,7 @@ module.exports = (env, args) => {
             publicPath: '/'
         },
         devServer: {
-            port: 8080,
+            // port: 8080,
             open: true,
             hot: true,
             historyApiFallback: true,
