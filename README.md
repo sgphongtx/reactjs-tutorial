@@ -1,5 +1,37 @@
 # Tutorial ReactJS + React Hooks + Redux + Redux Saga
 
+## Code Styles
+
+Follow ES6 Conventions https://github.com/elierotenberg/coding-styles/blob/master/es6.md
+
+## Code Rules
+
+1. Folder name is always **lower** first character
+2. Component name must be **Uppercase** first character
+3. Variable in component must be **lowercase** first character. ex: **Inbox** is incorrect name, it should be **inbox**
+4. Logic function in componennt must be **lowercase** first character too. Ex: **getFirstName()** is correct.
+5. The name of component, folder, variable must be clear, not too general. It means whe see the name, we can understand what will it do.
+
+## React Rules
+
+1. Each component have to add line **console.warn("Render {Component Name} in {Screen Name}")** before render function.
+2. Each component have to define `propTypes` and `defaultProps`
+3. Make sure check **Re-Render** issue with Chrome Devtools before push code.
+4. Profiling and Benchmark render time of component before push code
+
+## GIT Rules
+
+1. Each feature have own branch and always extends from **develop**
+2. Task branch will extend from feature branch
+3. Task branch merge into feature branch by **Pull Request**
+4. Feature branch will merge into **develop** by **Pull Request**
+
+## Pull Request Rules
+
+1. Add Reviewers for PR
+2. Reply feedback by comment when have updates
+3. After review Done, need to comment on PR and tag author status.
+
 ## Cài đặt dependencies cần thiết
 
 ```

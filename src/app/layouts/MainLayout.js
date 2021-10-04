@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 
 const MainLayout = ({ children }) => {
-    return { children };
-};
+    return { children }
+}
 
-export default MainLayout;
+export default MainLayout

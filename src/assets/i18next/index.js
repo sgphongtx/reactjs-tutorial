@@ -1,7 +1,7 @@
-import i18next from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18next from 'i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
 
-import commonUs from './us/common';
+import commonUs from './us/common'
 
 i18next.use(LanguageDetector).init({
     resources: {
@@ -23,6 +23,6 @@ i18next.use(LanguageDetector).init({
     react: {
         useSuspense: true
     }
-});
+})
 
-export default i18next;
+export default i18next
