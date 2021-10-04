@@ -6,7 +6,7 @@ import { getLocalStorage } from 'core/utils/LocalStorage'
 
 const token = getLocalStorage(ACCESS_TOKEN)
 
-export default function clientQuery(url, method = 'GET', data, handleSuccess, handleFailure) {
+export function clientQuery(url, method = 'GET', data, handleSuccess, handleFailure) {
     return axios({
         // `method` is the request method to be used when making the request
         method: method.toLowerCase(),

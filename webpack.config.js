@@ -1,6 +1,6 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const VENDOR_LIBS = [
     '@emotion/react',
@@ -18,10 +18,10 @@ const VENDOR_LIBS = [
     'react-router-dom',
     'redux',
     'redux-saga'
-];
+]
 
 module.exports = (env, args) => {
-    const isDev = args.mode === 'development';
+    const isDev = args.mode === 'development'
     const entry = isDev
         ? {
               bundle: './src/index.js'
@@ -29,8 +29,8 @@ module.exports = (env, args) => {
         : {
               bundle: './src/index.js',
               vendor: VENDOR_LIBS
-          };
-    const filename = isDev ? 'bundle.js' : '[name].[chunkhash].js';
+          }
+    const filename = isDev ? 'bundle.js' : '[name].[chunkhash].js'
     return {
         entry: entry,
         output: {
@@ -79,5 +79,5 @@ module.exports = (env, args) => {
             extensions: ['.json', '.js', '.jsx'],
             modules: [path.resolve('./src'), path.resolve('./node_modules')]
         }
-    };
-};
+    }
+}
