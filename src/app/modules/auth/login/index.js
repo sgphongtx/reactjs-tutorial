@@ -1,4 +1,9 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+
+import { AUTH_LOGIN } from 'app/const/Api'
+import { authLoginRequest } from 'core/redux/actions/authAction'
+
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -29,9 +34,28 @@ function Copyright(props) {
 const theme = createTheme()
 
 const Login = () => {
-    const handleSubmit = event => {
-        event.preventDefault()
-        const data = new FormData(event.currentTarget)
+    const dispatch = useDispatch()
+
+    const _handleSubmit = e => {
+        e && e.preventDefault()
+        e && e.stopPropagation()
+
+        const _handleSubmitSuccess = response => {
+            console.log(`response`, response)
+        }
+
+        const _handleSubmitFailure = () => {}
+
+        const data = new FormData(e.currentTarget)
+        const params = {
+            method: 'POST',
+            url: AUTH_LOGIN,
+            data: {
+                email: data.get('email'),
+                password: data.get('password')
+            }
+        }
+        dispatch(authLoginRequest(params, _handleSubmitSuccess, _handleSubmitFailure))
         // eslint-disable-next-line no-console
         console.log({
             email: data.get('email'),
@@ -57,7 +81,7 @@ const Login = () => {
                     <Typography component="h1" variant="h5">
                         Sign in
                     </Typography>
-                    <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                    <Box component="form" onSubmit={_handleSubmit} noValidate sx={{ mt: 1 }}>
                         <TextField
                             margin="normal"
                             required

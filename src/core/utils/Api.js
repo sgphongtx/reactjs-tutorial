@@ -6,7 +6,10 @@ import { getLocalStorage } from 'core/utils/LocalStorage'
 
 const token = getLocalStorage(ACCESS_TOKEN)
 
-export function clientQuery(url, method = 'GET', data, handleSuccess, handleFailure) {
+export function clientQuery(params, handleSuccess, handleFailure) {
+    const url = params.url ? params.url : ''
+    const method = params.method ? params.method : 'GET'
+    const data = params.data ? params.data : {}
     return axios({
         // `method` is the request method to be used when making the request
         method: method.toLowerCase(),
@@ -17,21 +20,22 @@ export function clientQuery(url, method = 'GET', data, handleSuccess, handleFail
         // `url` is the server URL that will be used for the request
         url: url,
         // `headers` are custom headers to be sent
-        headers: {
-            'X-Requested-With': 'XMLHttpRequest',
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-            // `validateStatus` defines whether to resolve or reject the promise for a given
-            // HTTP response status code. If `validateStatus` returns `true` (or is set to `null`
-            // or `undefined`), the promise will be resolved; otherwise, the promise will be
-            // rejected.
-            validateStatus: function (status) {
-                return status >= 200 && status < 300 // default
-            }
-        },
+        // headers: {
+        //     'X-Requested-With': 'XMLHttpRequest',
+        //     'Content-Type': 'application/json',
+        //     Authorization: `Bearer ${token}`,
+        //     // `validateStatus` defines whether to resolve or reject the promise for a given
+        //     // HTTP response status code. If `validateStatus` returns `true` (or is set to `null`
+        //     // or `undefined`), the promise will be resolved; otherwise, the promise will be
+        //     // rejected.
+        //     validateStatus: function (status) {
+        //         return status >= 200 && status < 300 // default
+        //     }
+        // },
         data: data
     })
-        .then(async response => {
+        .then(response => {
+            console.log(`response`, response)
             if (response.status === HTTP_RESPONSE_STATUS_CODE.EXPIRED_TOKEN) {
                 // remove token and redirect to login page the page for them
                 return Promise.reject({ message: 'Please re-authenticate.' })
