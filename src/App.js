@@ -2,13 +2,13 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import { privateRoutes, publicRoutes, publicPaths, privatePaths } from 'app/config/routes'
-import { HOME } from 'app/const/Routes'
+import { DASHBOARD } from 'app/const/Routes'
 
 import PrivateRoute from 'app/components/routes/PrivateRoute'
 import ErrorBoundary from 'app/components/error'
 import MainLayout from 'app/layouts/MainLayout'
 import AuthLayout from 'app/layouts/AuthLayout'
-import Home from 'app/modules/home'
+import Dashboard from 'app/modules/dashboard'
 // import ErrorPage from 'app/modules/error';
 
 const App = () => {
@@ -24,8 +24,8 @@ const App = () => {
                         </Switch>
                     </MainLayout>
                 </Route>
-                <Route exact path={[HOME]}>
-                    <PrivateRoute component={Home} path={HOME} exact />
+                <Route exact path={[DASHBOARD]}>
+                    <PrivateRoute component={Dashboard} path={DASHBOARD} exact />
                 </Route>
                 <Route exact path={publicPaths}>
                     <AuthLayout>

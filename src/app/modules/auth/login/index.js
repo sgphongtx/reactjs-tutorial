@@ -1,7 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import { AUTH_LOGIN } from 'app/const/Api'
+import { DASHBOARD } from 'app/const/Routes'
 import { authLoginRequest } from 'core/redux/actions/authAction'
 
 import Avatar from '@mui/material/Avatar'
@@ -35,13 +37,14 @@ const theme = createTheme()
 
 const Login = () => {
     const dispatch = useDispatch()
+    const history = useHistory()
 
     const _handleSubmit = e => {
         e && e.preventDefault()
         e && e.stopPropagation()
 
         const _handleSubmitSuccess = response => {
-            console.log(`_handleSubmitSuccess`, response)
+            history.push(DASHBOARD)
         }
 
         const _handleSubmitFailure = () => {}
