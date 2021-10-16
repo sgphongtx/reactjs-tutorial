@@ -41,7 +41,7 @@ const Login = () => {
         e && e.stopPropagation()
 
         const _handleSubmitSuccess = response => {
-            console.log(`response`, response)
+            console.log(`_handleSubmitSuccess`, response)
         }
 
         const _handleSubmitFailure = () => {}
@@ -56,11 +56,6 @@ const Login = () => {
             }
         }
         dispatch(authLoginRequest(params, _handleSubmitSuccess, _handleSubmitFailure))
-        // eslint-disable-next-line no-console
-        console.log({
-            email: data.get('email'),
-            password: data.get('password')
-        })
     }
 
     return (
